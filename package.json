@@ -1,0 +1,22 @@
+{
+  "name": "watsh",
+  "description": "Watch files and execute a shell command on any changes",
+  "keywords": [
+    "watch",
+    "inotify",
+    "filesystem",
+    "change"
+  ],
+  "version": "0.0.0",
+  "homepage": "https://github.com/chbrown/watsh",
+  "repository": "git://github.com/chbrown/watsh.git",
+  "bugs": "https://github.com/chbrown/watsh/issues",
+  "author": "Christopher Brown <io@henrian.com> (http://henrian.com)",
+  "license": "MIT",
+  "dependencies": {
+    "yargs": "*"
+  },
+  "bin": {
+    "watsh": "bin/watsh"
+  }
+}
