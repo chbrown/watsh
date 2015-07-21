@@ -7,7 +7,7 @@
     "filesystem",
     "change"
   ],
-  "version": "0.0.0",
+  "version": "0.1.0",
   "homepage": "https://github.com/chbrown/watsh",
   "repository": "git://github.com/chbrown/watsh.git",
   "bugs": "https://github.com/chbrown/watsh/issues",
