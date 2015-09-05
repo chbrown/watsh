@@ -9,7 +9,10 @@
   ],
   "version": "0.1.0",
   "homepage": "https://github.com/chbrown/watsh",
-  "repository": "git://github.com/chbrown/watsh.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chbrown/watsh"
+  },
   "bugs": "https://github.com/chbrown/watsh/issues",
   "author": "Christopher Brown <io@henrian.com> (http://henrian.com)",
   "license": "MIT",
