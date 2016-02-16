@@ -1,9 +1,11 @@
 #!/usr/bin/env node
 var watsh = require('../');
-var yargs = require('yargs')
-  .example("watsh 'lessc site.less > site.css' -- site.less")
-  .example("watsh clang main -- main.c main.h")
-  .example("watsh 'cleancss < main.css > main.min.css' main.css")
+var argvparser = require('optimist')
+  .usage([
+    "watsh 'lessc site.less > site.css' -- site.less",
+    "watsh clang main -- main.c main.h",
+    "watsh 'cleancss < main.css > main.min.css' main.css",
+  ].join('\n'))
   .describe({
     help: 'print this help message',
     verbose: 'print extra output',
@@ -12,16 +14,16 @@ var yargs = require('yargs')
   .boolean(['help', 'verbose', 'version'])
   .alias({verbose: 'v'});
 
-var argv = yargs.argv;
+var argv = argvparser.argv;
 
 if (argv.help) {
-  yargs.showHelp();
+  argvparser.showHelp();
 }
 else if (argv.version) {
   console.log(require('../package').version);
 }
 else {
-  // yargs doesn't let us process '--' as we want to, so we use the raw arguments
+  // optimist doesn't let us process '--' as we want to, so we use the raw arguments
   // process.argv might look like:
   //   ['node', '/usr/local/bin/watsh', 'index.js', '--', 'echo', 'index.js', 'changed']
   var args = process.argv.slice(2);
